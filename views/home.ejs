@@ -14,15 +14,15 @@
         </div>
         <div>
         <label for ="price">Enter the product price: </label>
-        <input type="number" id="" name="price">
+        <input type="number" id="price" name="price">
     </div>
     <div>
         <label for ="quantity">Enter the product quantity that is available: </label>
-        <input type="number" name="quantity"> 
+        <input type="number" id="quantity" name="quantity"> 
     </div>
     <div>
         <label for ="location">Enter the location where the product is stored: </label>
-        <input type="text" name="location"> 
+        <input type="text" id="location" name="location"> 
     </div>
         <button>Submit your product</button>
     </form>
@@ -31,12 +31,4 @@
 
 
 
-CREATE TABLE products (
-  ID SERIAL PRIMARY KEY,
-  name VARCHAR(30),
-  price FLOAT,
-  quantity INT,
-  location VARCHAR(30)
-);
 
-INSERT INTO products (name, price, quantity, location) VALUES ('feta cheese', 4.99, 50, 'mini market store') , ('smoked ham', 1.99, 120, 'super market store')
