@@ -68,20 +68,16 @@ res.send("just created a new product!")
 })
 
 app.get('/:id' , async(req, res)=> {
+  try {
   const id = [req.params.id];
   const queryText = 'SELECT * FROM products WHERE id=$1';
   await pool.connect();
-  const que = await pool.query(queryText, id, (err, que)=> {
-    if (err) {
-      throw err;
-    } else {
-      
-      
-    }
-    
-  })
-  console.log(que);
-  res.render('show');
+  const queryResult = await pool.query(queryText, id);
+  const product = queryResult.rows[0];
+  res.render('show', {product});
+  } catch(e) {
+    console.log(e);
+  }
   
 })
 
@@ -89,3 +85,4 @@ const port = 3000;
 app.listen(port, ()=>{
     console.log(`listening on ${port}` )
 });
+
