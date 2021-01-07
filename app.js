@@ -89,6 +89,13 @@ app.get('/:id/edit', async(req, res)=>{
   res.render('edit', {product});
 })
 
+app.delete('/:id', async(req, res)=> {
+  const id = [req.params.id];
+  const queryText = 'DELETE FROM products WHERE id=$1';
+  const queryResult = await pool.query(queryText, id);
+  res.redirect('/index');
+})
+
 
 
 const port = 3000;
