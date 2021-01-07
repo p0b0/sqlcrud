@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit your product</title>
+</head>
+<body>
+    <h1>We are editing products and storing them in sql db</h1>
+
+
+    <form action="/<%= product.id %>?_method=PUT" method="POST" >
+        
+        <div>
+            <label for ="name">Edit the product name: </label>
+        <input type="text" id="name" name="name" placeholder="<%= product.name %>">
+        </div>
+        <div>
+        <label for ="price">Edit the product price: </label>
+        <input type="number" id="price" name="price" placeholder="<%= product.price %>">
+    </div>
+    <div>
+        <label for ="quantity">Edit the product quantity that is available: </label>
+        <input type="number" id="quantity" name="quantity" placeholder="<%= product.quantity %>"> 
+    </div>
+    <div>
+        <label for ="location">Edit the location where the product is stored: </label>
+        <input type="text" id="location" name="location" placeholder="<%= product.location %>"> 
+    </div>
+        <button>Update your product</button>
+    
+    </form>
+
+    </body>
+</html>

@@ -7,8 +7,12 @@
     <h1>All products: </h1>
 
     <% for (let product of products) {%>
-        <li> <%= product.name %> </li>
+        <a href="/<%=product.id%>"><li> <%= product.name %> </li> </a>
     <% } %>
+
+    <a href="/"><button> Create a product </button></a>
+
+
     </body>
 
 </html>
